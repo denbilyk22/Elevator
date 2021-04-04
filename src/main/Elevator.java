@@ -1,19 +1,14 @@
-package classes;
+package main;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.IntSupplier;
 
 public class Elevator extends Thread{
 
     private static final int MAX_PASSENGERS = 5;
 
-    private int availableFloors;
-
     private int locationFloor;
     private int destination;
-
-    private int finalDestinationFloor;
 
     private List<Passenger> elevatorPassengers;
 
@@ -25,7 +20,6 @@ public class Elevator extends Thread{
 
     public Elevator(Building building) {
         this.building = building;
-        this.availableFloors = building.getNumberOfFloors();
 
         elevatorPassengers = new ArrayList<>();
 
@@ -47,6 +41,8 @@ public class Elevator extends Thread{
                 e.printStackTrace();
             }
         }
+
+        System.out.println("Elevator has finished his work!");
     }
 
     private void takePassengers() {
@@ -77,7 +73,7 @@ public class Elevator extends Thread{
 
         }
 
-        setDestinationAndFinalDestination();
+        setDestination();
 
     }
 
@@ -111,25 +107,23 @@ public class Elevator extends Thread{
 
     }
 
-    private void setDestinationAndFinalDestination(){
+    private void setDestination(){
         if(elevatorPassengers.size() == MAX_PASSENGERS){
 
             int maximumDestination = elevatorPassengers.stream()
-                                    .mapToInt(Passenger::getDestinationFloor)
-                                    .max().getAsInt();
+                    .mapToInt(Passenger::getDestinationFloor)
+                    .max().getAsInt();
 
             int minimumDestination = elevatorPassengers.stream()
-                                    .mapToInt(Passenger::getDestinationFloor)
-                                    .min().getAsInt();
+                    .mapToInt(Passenger::getDestinationFloor)
+                    .min().getAsInt();
 
             if (moveUp) {
                 destination = minimumDestination;
 
-                finalDestinationFloor = maximumDestination;
             } else {
                 destination = maximumDestination;
 
-                finalDestinationFloor = minimumDestination;
             }
         }
 
@@ -151,10 +145,6 @@ public class Elevator extends Thread{
                 if(nextNearestStop != -1 && nextNearestStop < destination){
                     destination = nextNearestStop;
                 }
-
-                finalDestinationFloor = elevatorPassengers.stream().
-                        mapToInt(Passenger::getDestinationFloor)
-                        .max().getAsInt();;
             }
 
             else {
@@ -164,18 +154,14 @@ public class Elevator extends Thread{
 
                 int nextNearestStop = building.getFloors().stream()
                         .filter(floor -> floor.getFloorNumber() < locationFloor
-                                        && !floor.getPassengersAwaitedList().isEmpty()
-                                        && hasPassengerToElevate(floor.getPassengersAwaitedList()))
+                                && !floor.getPassengersAwaitedList().isEmpty()
+                                && hasPassengerToElevate(floor.getPassengersAwaitedList()))
                         .mapToInt(Building.Floor::getFloorNumber)
                         .max().orElse(-1);
 
                 if(nextNearestStop != -1 && nextNearestStop > destination){
                     destination = nextNearestStop;
                 }
-
-                finalDestinationFloor = elevatorPassengers.stream()
-                        .mapToInt(Passenger::getDestinationFloor)
-                        .min().getAsInt();
             }
         }
 
@@ -206,9 +192,6 @@ public class Elevator extends Thread{
                         .min().getAsInt();
 
             }
-
-            finalDestinationFloor = destination;
-
         }
 
     }
@@ -222,7 +205,7 @@ public class Elevator extends Thread{
 
     private void printPassengers(){
         for (int i = building.getFloors().size() - 1; i >= 0; i--) {
-            String floor = (building.getFloors().get(i).getFloorNumber()) + 1 + " етаж : " ;
+            String floor = (building.getFloors().get(i).getFloorNumber() + 1) + " етаж : " ;
 
             System.out.print(String.format("%10s", floor));
 
@@ -231,7 +214,7 @@ public class Elevator extends Thread{
                 StringBuilder elevator = new StringBuilder();
 
                 if(moveUp){
-                  elevator.append("^^");
+                    elevator.append("^^");
                 }
                 else {
                     elevator.append("↓↓");
@@ -255,6 +238,7 @@ public class Elevator extends Thread{
 
             System.out.println();
         }
+        System.out.println("____________________________________________________________");
         System.out.println();
     }
 }

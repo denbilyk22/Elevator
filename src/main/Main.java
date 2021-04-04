@@ -1,5 +1,4 @@
-import main.Building;
-import main.Elevator;
+package main;
 
 public class Main {
 

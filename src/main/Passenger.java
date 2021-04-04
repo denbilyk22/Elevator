@@ -29,4 +29,8 @@ public class Passenger {
     public int getLocationFloor() {
         return locationFloor;
     }
+
+    public int getMaxFloorsAvailable() {
+        return maxFloorsAvailable;
+    }
 }

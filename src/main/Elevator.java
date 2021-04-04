@@ -30,9 +30,9 @@ public class Elevator extends Thread{
 
     public void run(){
         while (!isFinish()){
-            printPassengers();
             deliverPassengers();
             takePassengers();
+            printPassengers();
             move();
 
             try {
@@ -42,9 +42,18 @@ public class Elevator extends Thread{
             }
         }
 
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        printPassengers();
+
         System.out.println("Elevator has finished his work!");
     }
 
+    // Pick up passengers from the floor where elevator is situated
     private void takePassengers() {
         Building.Floor floor = building.getFloors().get(locationFloor);
         List<Passenger> passengersAwaitedList = floor.getPassengersAwaitedList();
@@ -65,7 +74,6 @@ public class Elevator extends Thread{
                 && !passengersAwaitedList.isEmpty()
                 && hasPassengerToElevate(passengersAwaitedList)) {
 
-
             Passenger passengerToElevate = getPassengerToElevate(passengersAwaitedList);
 
             elevatorPassengers.add(passengerToElevate);
@@ -77,14 +85,17 @@ public class Elevator extends Thread{
 
     }
 
+    // Drop of passengers on the desired floor
     private void deliverPassengers(){
         elevatorPassengers.removeIf(pas -> pas.getDestinationFloor() == locationFloor);
     }
 
+    // Change location of the elevator(moving up or down)
     private void move() {
         locationFloor = destination;
     }
 
+    // Check if there is any passenger to move in specified direction
     private boolean hasPassengerToElevate(List<Passenger> passengersAwaitedList) {
         if (moveUp) {
             return passengersAwaitedList.stream().anyMatch(pas -> pas.getDestinationFloor() > locationFloor);
@@ -94,6 +105,7 @@ public class Elevator extends Thread{
 
     }
 
+    // Find any passenger to elevate in specific floor and return him
     private Passenger getPassengerToElevate(List<Passenger> passengersAwaitedList) {
         if (moveUp) {
             return passengersAwaitedList.stream()
@@ -107,9 +119,9 @@ public class Elevator extends Thread{
 
     }
 
+    // Set elevator`s next stop
     private void setDestination(){
         if(elevatorPassengers.size() == MAX_PASSENGERS){
-
             int maximumDestination = elevatorPassengers.stream()
                     .mapToInt(Passenger::getDestinationFloor)
                     .max().getAsInt();
@@ -127,10 +139,9 @@ public class Elevator extends Thread{
             }
         }
 
-        else if(elevatorPassengers.size() < 5 && !elevatorPassengers.isEmpty()){
+        if(elevatorPassengers.size() < 5 && !elevatorPassengers.isEmpty()){
 
             if (moveUp) {
-
                 destination = elevatorPassengers.stream()
                         .mapToInt(Passenger::getDestinationFloor)
                         .min().getAsInt();
@@ -165,7 +176,7 @@ public class Elevator extends Thread{
             }
         }
 
-        else if(elevatorPassengers.isEmpty() && building.getFloors().get(locationFloor).getPassengersAwaitedList().isEmpty()){
+        if(elevatorPassengers.isEmpty() && building.getFloors().get(locationFloor).getPassengersAwaitedList().isEmpty()){
 
             if(building.getFloors().stream()
                     .filter(floor -> floor.getFloorNumber() < locationFloor)
@@ -196,6 +207,7 @@ public class Elevator extends Thread{
 
     }
 
+    // Check available passengers to elevate and if there is no one, stop elevator
     private boolean isFinish(){
         if(building.getFloors().stream().allMatch(floor -> floor.getPassengersAwaitedList().isEmpty()) && elevatorPassengers.isEmpty()){
             isFinish = true;
@@ -203,9 +215,10 @@ public class Elevator extends Thread{
         return isFinish;
     }
 
+    // Print elevator, its passengers and available passengers to deliver
     private void printPassengers(){
         for (int i = building.getFloors().size() - 1; i >= 0; i--) {
-            String floor = (building.getFloors().get(i).getFloorNumber() + 1) + " етаж : " ;
+            String floor = (building.getFloors().get(i).getFloorNumber() + 1) + " floor : " ;
 
             System.out.print(String.format("%10s", floor));
 
@@ -220,8 +233,8 @@ public class Elevator extends Thread{
                     elevator.append("↓↓");
                 }
 
-                elevator.append("ліфт (");
-                elevatorPassengers.forEach(a-> elevator.append(a.getDestinationFloor() + 1 + " "));
+                elevator.append("lift (");
+                elevatorPassengers.forEach(pas-> elevator.append(pas.getDestinationFloor() + 1 + " "));
                 elevator.deleteCharAt(elevator.lastIndexOf(" "));
                 elevator.append(")");
                 System.out.print(String.format("%22s", elevator.toString()));
@@ -234,10 +247,11 @@ public class Elevator extends Thread{
 
             System.out.print(" | ");
             building.getFloors().get(i).getPassengersAwaitedList()
-                    .forEach(a -> System.out.print(a.getDestinationFloor() + 1 + " "));
+                    .forEach(pas -> System.out.print(pas.getDestinationFloor() + 1 + " "));
 
             System.out.println();
         }
+
         System.out.println("____________________________________________________________");
         System.out.println();
     }

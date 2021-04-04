@@ -6,15 +6,14 @@ import java.util.List;
 import java.util.Random;
 
 public class Building {
+    public static final int MINIMUM_FLOORS = 5;
+    public static final int MAXIMUM_FLOORS = 5;
 
     private static final Random RANDOM = new Random();
 
-    private static final int MINIMUM_FLOORS = 5;
-    private static final int MAXIMUM_FLOORS = 20;
+    private final int numberOfFloors;
 
-    private int numberOfFloors;
-
-    private List<Floor> floors;
+    private final List<Floor> floors;
 
     public Building() {
 
@@ -33,28 +32,20 @@ public class Building {
         return floors;
     }
 
-    public static int getMaximumFloors() {
-        return MINIMUM_FLOORS;
-    }
-
-    public static int getMinimumFloors() {
-        return MAXIMUM_FLOORS;
-    }
-
     private static int randomNumberBetweenMinAndMax(int minimum, int maximum){
         return RANDOM.nextInt((maximum-minimum) + 1) + minimum;
     }
 
     public class Floor {
 
-        private static final int MIN_PASSENGERS = 0;
-        private static final int MAX_PASSENGERS = 10;
+        public static final int MIN_PASSENGERS = 0;
+        public static final int MAX_PASSENGERS = 10;
 
-        private int startNumberOfPassengersAwaited;
+        private final int startNumberOfPassengersAwaited;
 
-        private List<Passenger> passengersAwaitedList;
+        private final List<Passenger> passengersAwaitedList;
 
-        private int floorNumber;
+        private final int floorNumber;
 
         public Floor(int floorNumber) {
             this.floorNumber = floorNumber;
@@ -80,5 +71,6 @@ public class Building {
         public int getStartNumberOfPassengersAwaited() {
             return startNumberOfPassengersAwaited;
         }
+
     }
 }

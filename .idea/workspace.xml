@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da8c53c0-20a0-41a6-a70c-4c68bc9ed382" name="Default Changelist" comment="Done it!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +17,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qcNpVsZmb7rZou1HRh3VxRmmbn" />

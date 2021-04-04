@@ -25,4 +25,8 @@ public class Passenger {
     public int getDestinationFloor() {
         return destinationFloor;
     }
+
+    public int getLocationFloor() {
+        return locationFloor;
+    }
 }

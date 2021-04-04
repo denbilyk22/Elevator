@@ -42,7 +42,7 @@ public class Elevator extends Thread{
             move();
 
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

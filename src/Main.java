@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         int minimumFloors = 5;
-        int maximumFloors = 10;
+        int maximumFloors = 6;
 
         Building building = new Building(minimumFloors, maximumFloors);
 

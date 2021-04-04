@@ -7,6 +7,5 @@ public class Main {
 
         Thread elevator = new Elevator(building);
         elevator.start();
-
     }
 }

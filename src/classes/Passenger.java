@@ -15,10 +15,10 @@ public class Passenger {
         this.locationFloor = locationFloor;
         this.maxFloorsAvailable = maxFloorsAvailable;
 
-        destinationFloor = RANDOM.nextInt(maxFloorsAvailable) + 1;
+        destinationFloor = RANDOM.nextInt(maxFloorsAvailable);
 
-        while(destinationFloor == locationFloor){
-            destinationFloor = RANDOM.nextInt();
+        while(destinationFloor == this.locationFloor){
+            destinationFloor = RANDOM.nextInt(maxFloorsAvailable);
         }
     }
 

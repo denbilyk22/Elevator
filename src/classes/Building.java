@@ -11,6 +11,7 @@ public class Building {
 
     private int minimumFloors;
     private int maximumFloors;
+
     private int numberOfFloors;
 
     private List<Floor> floors;
@@ -19,12 +20,11 @@ public class Building {
         this.minimumFloors = minimumFloors;
         this.maximumFloors = maximumFloors;
 
-        numberOfFloors = randomNumberGreaterThanEqual(minimumFloors, maximumFloors);
+        numberOfFloors = randomNumberBetweenMinAndMax(minimumFloors, maximumFloors);
 
         floors = Arrays.asList(new Floor[numberOfFloors]);
 
-        floors.forEach(a -> floors.set(floors.indexOf(a), new Floor(floors.indexOf(a) + 1)));
-
+        floors.forEach(a -> floors.set(floors.indexOf(a), new Floor(floors.indexOf(a))));
     }
 
     public int getNumberOfFloors() {
@@ -39,7 +39,11 @@ public class Building {
         return maximumFloors;
     }
 
-    private static int randomNumberGreaterThanEqual(int minimum, int maximum){
+    public int getMinimumFloors() {
+        return minimumFloors;
+    }
+
+    private static int randomNumberBetweenMinAndMax(int minimum, int maximum){
         return RANDOM.nextInt((maximum-minimum) + 1) + minimum;
     }
 
@@ -49,6 +53,7 @@ public class Building {
         private static final int MAX_PASSENGERS = 10;
 
         private int startNumberOfPassengersAwaited;
+
         private List<Passenger> passengersAwaitedList;
 
         private int floorNumber;
@@ -56,7 +61,7 @@ public class Building {
         public Floor(int floorNumber) {
             this.floorNumber = floorNumber;
 
-            startNumberOfPassengersAwaited = randomNumberGreaterThanEqual(MIN_PASSENGERS, MAX_PASSENGERS);
+            startNumberOfPassengersAwaited = randomNumberBetweenMinAndMax(MIN_PASSENGERS, MAX_PASSENGERS);
 
             passengersAwaitedList = new ArrayList<>();
 
@@ -72,6 +77,10 @@ public class Building {
 
         public int getFloorNumber() {
             return floorNumber;
+        }
+
+        public int getStartNumberOfPassengersAwaited() {
+            return startNumberOfPassengersAwaited;
         }
     }
 }

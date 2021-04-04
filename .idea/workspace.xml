@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da8c53c0-20a0-41a6-a70c-4c68bc9ed382" name="Default Changelist" comment="Done it!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="da8c53c0-20a0-41a6-a70c-4c68bc9ed382" name="Default Changelist" comment="Print after delivering and picking up passengers">
       <change beforePath="$PROJECT_DIR$/src/main/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Building.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

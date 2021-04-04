@@ -42,14 +42,6 @@ public class Elevator extends Thread{
             }
         }
 
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        printPassengers();
-
         System.out.println("Elevator has finished his work!");
     }
 

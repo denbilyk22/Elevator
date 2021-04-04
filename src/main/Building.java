@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Building {
     public static final int MINIMUM_FLOORS = 5;
-    public static final int MAXIMUM_FLOORS = 5;
+    public static final int MAXIMUM_FLOORS = 20;
 
     private static final Random RANDOM = new Random();
 

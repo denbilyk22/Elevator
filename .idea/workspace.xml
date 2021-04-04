@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="da8c53c0-20a0-41a6-a70c-4c68bc9ed382" name="Default Changelist" comment="Done it!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestTask/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestTask/classes/Building.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestTask/classes/Elevator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestTask/classes/Passenger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestTask/classes/Stage.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../arra" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">

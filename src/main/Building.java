@@ -1,4 +1,4 @@
-package classes;
+package main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,18 +9,16 @@ public class Building {
 
     private static final Random RANDOM = new Random();
 
-    private int minimumFloors;
-    private int maximumFloors;
+    private static final int MINIMUM_FLOORS = 5;
+    private static final int MAXIMUM_FLOORS = 20;
 
     private int numberOfFloors;
 
     private List<Floor> floors;
 
-    public Building(int minimumFloors, int maximumFloors) {
-        this.minimumFloors = minimumFloors;
-        this.maximumFloors = maximumFloors;
+    public Building() {
 
-        numberOfFloors = randomNumberBetweenMinAndMax(minimumFloors, maximumFloors);
+        numberOfFloors = randomNumberBetweenMinAndMax(MINIMUM_FLOORS, MAXIMUM_FLOORS);
 
         floors = Arrays.asList(new Floor[numberOfFloors]);
 
@@ -35,12 +33,12 @@ public class Building {
         return floors;
     }
 
-    public int getMaximumFloors() {
-        return maximumFloors;
+    public static int getMaximumFloors() {
+        return MINIMUM_FLOORS;
     }
 
-    public int getMinimumFloors() {
-        return minimumFloors;
+    public static int getMinimumFloors() {
+        return MAXIMUM_FLOORS;
     }
 
     private static int randomNumberBetweenMinAndMax(int minimum, int maximum){

@@ -169,7 +169,6 @@ public class Elevator extends Thread{
         }
 
         if(elevatorPassengers.isEmpty() && building.getFloors().get(locationFloor).getPassengersAwaitedList().isEmpty()){
-
             if(building.getFloors().stream()
                     .filter(floor -> floor.getFloorNumber() < locationFloor)
                     .anyMatch(floor -> !floor.getPassengersAwaitedList().isEmpty())){
@@ -212,7 +211,7 @@ public class Elevator extends Thread{
         for (int i = building.getFloors().size() - 1; i >= 0; i--) {
             String floor = (building.getFloors().get(i).getFloorNumber() + 1) + " floor : " ;
 
-            System.out.print(String.format("%10s", floor));
+            System.out.print(String.format("%11s", floor));
 
             if(i == locationFloor){
 
@@ -244,7 +243,7 @@ public class Elevator extends Thread{
             System.out.println();
         }
 
-        System.out.println("____________________________________________________________");
+        System.out.println("________________________________________________________________");
         System.out.println();
     }
 }

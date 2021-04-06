@@ -120,13 +120,9 @@ public class Elevator extends Thread{
                     .mapToInt(Passenger::getDestinationFloor)
                     .min().getAsInt();
 
-            if (moveUp) {
-                destination = minimumDestination;
+            destination = moveUp ? minimumDestination
+                                 : maximumDestination;
 
-            } else {
-                destination = maximumDestination;
-
-            }
         }
 
         if(elevatorPassengers.size() < 5 && !elevatorPassengers.isEmpty()){

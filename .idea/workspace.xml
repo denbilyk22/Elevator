@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7721215d-0ef0-4666-b74d-0ee193c3a5dc" name="Default Changelist" comment="Add Maven">
+    <list default="true" id="7721215d-0ef0-4666-b74d-0ee193c3a5dc" name="Default Changelist" comment="Correcting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elevator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617704039796</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Correcting">
+      <created>1617704420999</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617704420999</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,6 +87,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Maven" />
+    <MESSAGE value="Correcting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcting" />
   </component>
 </project>

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7721215d-0ef0-4666-b74d-0ee193c3a5dc" name="Default Changelist" comment="" />
+    <list default="true" id="7721215d-0ef0-4666-b74d-0ee193c3a5dc" name="Default Changelist" comment="Add Maven">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +19,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1qn7lYGbRsccjT0o06KCPdlohtg" />
   <component name="ProjectViewState">
@@ -29,9 +35,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Elevator1" />
+      <module name="Elevator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -51,6 +57,29 @@
       <option name="presentableId" value="Default" />
       <updated>1617703654370</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add Maven">
+      <created>1617704039796</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617704039796</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Maven" />
   </component>
 </project>

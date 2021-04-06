@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Elevator extends Thread{
 
@@ -112,16 +113,12 @@ public class Elevator extends Thread{
     // Set elevator`s next stop
     private void setDestination(){
         if(elevatorPassengers.size() == MAX_PASSENGERS){
-            int maximumDestination = elevatorPassengers.stream()
-                    .mapToInt(Passenger::getDestinationFloor)
-                    .max().getAsInt();
 
-            int minimumDestination = elevatorPassengers.stream()
-                    .mapToInt(Passenger::getDestinationFloor)
-                    .min().getAsInt();
+            IntStream passengersDestinations = elevatorPassengers.stream()
+                    .mapToInt(Passenger::getDestinationFloor);
 
-            destination = moveUp ? minimumDestination
-                                 : maximumDestination;
+            destination = moveUp ? passengersDestinations.min().getAsInt()
+                                 : passengersDestinations.max().getAsInt();
 
         }
 
